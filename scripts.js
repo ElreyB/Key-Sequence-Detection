@@ -1,5 +1,5 @@
 const pressed = [];
-const secertCode = 'elrey';
+const secertCode = 'unicorn';
 window.addEventListener('keyup', (e) => {
   console.log(e.key);
   pressed.push(e.key);
