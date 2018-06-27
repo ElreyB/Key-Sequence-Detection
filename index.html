@@ -5,11 +5,24 @@
   <meta charset="UTF-8">
   <title>Key Detection</title>
   <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
-  <script src="scripts.js"></script>
 </head>
 
 <body>
   <h3 style="text-align: center">Type the word unicorn</h3>
 </body>
+<script>
+  const pressed = [];
+  const secertCode = 'unicorn';
+  window.addEventListener('keyup', (e) => {
+    console.log(e.key);
+    pressed.push(e.key);
+    pressed.splice(-secertCode.length - 1, pressed.length - secertCode.length)
+    if (pressed.join('').includes(secertCode)) {
+      console.log('DING DING!');
+      cornify_add();
+    }
+    console.log(pressed);
+  });
+</script>
 
 </html>
